@@ -1,0 +1,825 @@
+html {
+    height: 100%;
+    /*background: linear-gradient(155deg, whitesmoke 0%, #72577a 50%, whitesmoke 100%);*/
+    background-image: linear-gradient(145deg, whitesmoke 0%, 
+
+    whitesmoke 0%, #FAA 1%, #FAA 2%,whitesmoke 3%, 
+    whitesmoke 4%, #BDE 5%, #BDE 6%, whitesmoke 7%, 
+    whitesmoke 8%, #CE9 9%,#CE9 10%, whitesmoke 11%, 
+    whitesmoke 12%, #FFF0A0 13%, #FFF0A0 14%, whitesmoke 15%,
+
+    whitesmoke 85%, #FFF0A0 86%, #FFF0A0 87%, whitesmoke 88%,
+    whitesmoke 89%, #CE9 90%,#CE9 91%, whitesmoke 92%, 
+    whitesmoke 93%, #BDE 94%, #BDE 95%, whitesmoke 96%, 
+    whitesmoke 97%, #FAA 98%, #FAA 99%,whitesmoke 100%, 
+    whitesmoke 100%);
+}
+
+body {
+    font-size: 95%;
+    font-family: Arial;
+    background-color: transparent;
+}
+
+#overviews, #manual {
+  background-color: #D9D9D9;
+}
+
+.bgred {
+  background-color: #FAA;
+}
+
+.bgblue {
+  background-color: #BDE;
+}
+
+.bggreen {
+  background-color: #CE9;
+}
+
+.bgyellow {
+  background-color: #FFF0A0;
+}
+
+h2 {
+  font-size: 21px;
+  padding-left: 15px;
+  padding-top: 5px;
+}
+
+input {
+  padding-left: 5px;
+  background-color: rgba(0, 0, 0, 0.07);
+  border: 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+}
+
+  input:hover {
+      background-color: rgba(125, 125, 125, 0.3);
+  }
+
+.symbP::after {
+  content: " Ptn";
+  margin-left: -40px;
+}
+
+.tussen.symbP::after, .tussen.symbE::after, .totaal.symbP::after, .res.symbP::after, .totaal.symbE::after, .res.symbE::after {
+  margin-left: 5px;
+}
+
+.symbE::after {
+  content: "€";
+  margin-left: -25px;
+}
+
+.mainInfo {
+  background: #D9D9D9;
+  margin-bottom: 25px;
+  padding: 10px;
+  border: 2px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+  .mainInfo .row {
+      position: relative;
+  }
+
+  .mainInfo label {
+      width: 100%;
+      font-weight: 600;
+  }
+
+      .mainInfo label[for=bValue], .mainInfo label[for=pValue] {
+          width: auto;
+      }
+
+  .mainInfo .col {
+      padding: 15px;
+  }
+
+  .mainInfo #BP {
+      font-size: xx-large;
+      position: relative;
+  }
+
+      .mainInfo #BP img {
+          position: absolute;
+          top: 0px;
+          right: 20px;
+          height: 55%;
+      }
+
+      .mainInfo #BP #bpCont {
+          display: inline-flex;
+          position: absolute;
+          bottom: 15px;
+      }
+
+      .mainInfo #BP input {
+          width: 50px;
+          text-align: center;
+      }
+
+  .mainInfo #name input {
+      width: 100%;
+      font-size: x-large;
+  }
+
+  .mainInfo #txtBudget {
+      display: flex;
+      position: absolute;
+  }
+
+          .mainInfo #txtBudget div input {
+              width: 100%;
+          }
+
+      .mainInfo #txtBudget span {
+          width: 10%;
+          margin: 0 5%;
+          text-align: center;
+          font-size: xx-large;
+          top: -10px;
+          position: relative;
+       }
+
+  .mainInfo #periode input {
+      width: 40%;
+  }
+
+  .mainInfo #periode span {
+      width: 10%;
+      margin: 0 5%;
+  }
+
+  .mainInfo #totaalDagen {
+      position: absolute;
+      right: 5%;
+      font-size: small;
+      font-weight: 700;
+  }
+
+  .mainInfo #extra_options {
+      position: absolute;
+      right: 5%;
+      margin-top: 10px;
+      width: 215px;
+      top: 50px;
+  }
+
+  .mainInfo #extra_options > div {
+      display: inline-flex;
+      width: 100%;
+      margin-left: 10px;
+  }
+
+  .mainInfo #extra_options #VAPH_Budget{
+      width: 100%;
+  }
+
+
+.costs {
+  position: relative;
+  padding-top: 15px;
+}
+
+#veil {
+  position: absolute;
+  z-index: 999;
+  background-color: rgba(25, 25, 25, 0.9);
+  top: -1%;
+  width: 100%;
+  height: 103%;
+  color: white;
+  font-size: xx-large;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+#tabs {
+  margin: 0;
+  z-index: 1;
+  position: relative;
+  bottom: -2px;
+}
+
+  #tabs > div {
+      display: flex;
+  }
+
+  #tabs #others {
+      margin-left: auto;
+  }
+
+      #tabs #others .tab {
+          background-color: #D9D9D9;
+      }
+
+  #tabs .tab {
+      border-radius: 10px 10px 0 0;
+      border: 2px black solid;
+      text-align: center;
+      position: relative;
+  }
+
+  #tabs span {
+      cursor: pointer;
+      display: block;
+      line-height: 2;
+      width: 60px;
+  }
+
+  #tabs .symbol {
+      position: absolute;
+      font-size: 23px;
+      top: -5px;
+  }
+
+  #tabs .tab:hover {
+      font-weight: 700;
+  }
+
+  #tabs .selected {
+      font-weight: 800;
+      border-bottom: 0;
+      bottom: -1px;
+  }
+
+#budgetCats{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: x-large;
+    left: 47.5%;
+    bottom: -32%;
+    text-align: center;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: lightgray;
+    transition: linear transform;
+}
+
+@keyframes mekandersFont{
+    0% {color: lightgray}
+    10% {color: rgb(255, 170, 170);}
+    20% {color: rgb(255, 170, 170);}
+    30% {color: rgb(204, 238, 153);}
+    40% {color: rgb(204, 238, 153);}
+    50% {color: rgb(187, 221, 238);}
+    60% {color: rgb(187, 221, 238);}
+    70% {color: rgb(241, 243, 141);}
+    80% {color: rgb(241, 243, 141);}
+    90% {color: lightgray}
+    100% {color: lightgray}
+}
+
+#budgetCats:hover{
+    cursor: pointer;
+    animation-name: mekandersFont;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
+
+#budgetCats span{
+    top: -2px;
+    position: relative;
+}
+
+
+#ondersteuningen {
+  margin-top: 60px;
+}
+
+  #ondersteuningen .header .col {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center !important;
+      border-bottom: double black;
+      border-left: 1px dashed black;
+      border-right: 1px dashed black;
+      margin-bottom: 5px;
+      z-index: 9;
+  }
+
+  #ondersteuningen .header .beschrijving {
+      border-left: 0;
+  }
+
+  #ondersteuningen .header .totaal {
+      border-right: 0;
+  }
+
+  #ondersteuningen .beschrijving {
+      margin-left: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
+
+  #ondersteuningen .totaal {
+      margin-right: 15px;
+  }
+
+  #ondersteuningen .wekelijks div {
+      padding-right: 0;
+      padding-left: 7px;
+  }
+
+  #ondersteuningen .wekelijks input {
+      width: inherit;
+  }
+
+  #ondersteuningen .wekelijks label, #andere #besteedbaarDeel label {
+      top: -5px;
+      white-space: nowrap;
+      font-style: italic;
+      font-size: smaller;
+  }
+
+  #ondersteuningen .wekelijks {
+      text-align: left;
+  }
+
+  #ondersteuningen .beschrijving, #ondersteuningen .totaal {
+      text-align: right;
+  }
+
+  #ondersteuningen .minmax .col-3{
+      padding: 0;
+  }
+  
+  #ondersteuningen .minmax input{
+    width: inherit;
+  }
+
+  #ondersteuningen .minmax .col-9{
+    text-align: left;
+    white-space: pre;
+    padding-left: 5px;
+ }
+
+      #andere #besteedbaarDeel span {
+          font-size: x-small;
+          font-style: italic;
+      }
+
+  #andere .details {
+      white-space: nowrap;
+      left: -15px;
+  }
+
+  #andere .row {
+      padding-bottom: 10px;
+  }
+
+  #andere select {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.07);
+      border: 2px solid rgba(0, 0, 0, 0.5);
+      border-top: 0;
+      border-radius: 3px;
+  }
+
+      #andere select:hover {
+          background-color: rgba(125, 125, 125, 0.3);
+      }
+
+  #andere option.bgred {
+      background-color: rgba(255, 170, 170, 0.5);
+  }
+
+  #andere option.bgblue {
+      background-color: rgba(187, 221, 238, 0.5);
+  }
+
+  #andere option.bggreen {
+      background-color: rgba(204, 238, 153, 0.5);
+  }
+
+  #andere option.bgyellow {
+      background-color: rgba(255, 240, 160, 0.5);
+  }
+
+  .beschrijving {
+      margin-left: 15px;
+      text-align: right;
+  }
+
+  #andere .totaal {
+      text-align: right;
+      margin-right: 15px;
+  }
+
+  #dagOndersteuning {
+    margin: 0 0 35px 0;
+  }
+
+  #dag_inc_activiteiten{
+    font-weight: bold;
+  }
+
+  #dagOndersteuning .actBox {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+  }
+
+      #dagOndersteuning .actBox input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+      }
+
+      #dagOndersteuning .actBox .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 25px;
+          width: 25px;
+          background-color: rgba(0, 0, 0, 0.07);
+          border: 2px solid rgba(0, 0, 0, 0.5);
+          border-radius: 5px;
+          margin-top: 5%;
+      }
+
+          #dagOndersteuning .actBox .checkmark:after {
+              content: "";
+              position: absolute;
+              display: none;
+          }
+
+      #dagOndersteuning .actBox input:checked ~ .checkmark:after {
+          display: block;
+      }
+
+      #dagOndersteuning .actBox .checkmark:after {
+          left: 6px;
+          top: 2px;
+          width: 9px;
+          height: 14px;
+          border: solid rgba(0, 0, 0, 0.5);
+          border-radius: 1px;
+          border-width: 0 2px 2px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+      }
+
+      #dagOndersteuning .actBox:hover input ~ .checkmark {
+          background-color: rgba(125, 125, 125, 0.3);
+      }
+
+#resultaat {
+  border-top: 2px dashed black;
+  padding-top: 5px;
+}
+
+  #resultaat .beschrijving {
+      text-align: right;
+  }
+
+      #resultaat .beschrijving .col {
+          text-align: right;
+      }
+
+      #resultaat .beschrijving span {
+          right: -40%;
+          position: relative;
+          font-weight: 600;
+      }
+
+  #resultaat .res {
+      margin-right: 15px;
+      width: auto;
+  }
+
+  #resultaat #resCostRow .res {
+      font-weight: 600;
+  }
+
+#line {
+  position: absolute;
+  border-right: 2px dashed black;
+  height: 100%;
+  bottom: 0;
+  right: 15%;
+}
+
+#overviews, #prices {
+  border-radius: 0 0 10px 10px;
+  border: 2px solid black;
+  height: 500px;
+  position: relative;
+}
+
+#overviews {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+  #overviews .col {
+      text-align: right;
+      border-left: 2px dashed black;
+      padding: 0 10px;
+      align-items: center;
+      display: grid;
+  }
+
+  #overviews .row td:first-of-type:not(.col-2):not(.col-1), #overviews .row th:first-of-type:not(.col-2):not(.col-1){
+    border-left: 0;
+    padding-left: 0;
+    white-space: normal;
+    min-width: 20%;
+    text-align: center;
+  }
+
+  #overviews .row td:first-of-type {
+      font-weight: 700;
+      font-size: 15px;
+  }
+
+  #overviews .selected, .resView .selected {
+      background-color: rgba(250, 215, 150, 0.5);
+      border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+
+  #overviews td {
+      border-bottom: 1.5px dashed black;
+  }
+
+  #overviews table {
+      margin: auto;
+      width: 90%;
+  }
+
+  #overviews thead {
+      position: sticky;
+      top: 50px;
+      z-index: 100;
+  }
+
+  #overviews th {
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+      border-left: 2px solid black !important;
+      background-color: lightsalmon;
+      text-align: center !important;
+  }
+
+      #overviews th:last-of-type {
+          border-right: 2px solid black;
+      }
+
+#switchContainer {
+  text-align: center;
+  position: sticky;
+  top: 0;
+  padding-top: 1%;
+  z-index: 100;
+  background-color: inherit;
+}
+
+#switchTotal {
+  position: absolute;
+  top: 5px;
+  right: 2%;
+}
+
+#VAPH {
+    display: inline-flex;
+    position: absolute;
+    right: 10%;
+    top: 5px;
+    height: fit-content;
+}
+
+#VAPH input[type="text"]{
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px 0 0 10px;
+    padding: 8px 8px;
+}
+
+
+#VAPH > div:first-child{
+    width: 50%;
+}
+
+#budgetLock label:hover{
+    cursor: pointer;
+}
+
+#budgetLock label {
+    margin-top: 0;
+    height: 100%;
+    position: relative;
+    width: 32px;
+    padding: 0;
+}
+
+#budgetLock label div{
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 0;
+    top: 0;
+    padding: 15%;
+}
+
+#budgetLock label div svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+  #prices .switch {
+      display: inline-flex;
+      margin-top: 0;
+  }
+
+  #prices label {
+      background-color: rgba(0, 0, 0, 0.07);
+      margin-left: -1px;
+  }
+
+    #prices label:hover {
+        background-color: rgba(125, 125, 125, 0.3);
+    }
+
+  #prices input:checked + label , #prices input:disabled{
+      background-color: rgba(119, 119, 119, 0.5);
+  }
+
+  .switch input {
+      position: absolute !important;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      width: 1px;
+      border: 0;
+      overflow: hidden;
+  }
+
+  .switch label {
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 14px;
+      line-height: 1;
+      text-align: center;
+      padding: 8px 16px;
+      margin-right: -1px;
+      background-color: #ccc;
+      border: 2px solid rgba(0, 0, 0, 0.5);
+  }
+
+      .switch label:hover {
+          background-color: #999;
+          font-weight: 600;
+      }
+
+  .switch input:checked + label {
+      background-color: #999;
+      font-weight: 700;
+  }
+
+  .switch label:first-of-type {
+      border-radius: 10px 0 0 10px;
+  }
+
+  .switch label:last-of-type {
+      border-radius: 0 10px 10px 0;
+  }
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 9px rgba(25, 25, 25, 0.8);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.resView {
+  position: absolute;
+  text-align: center;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: rgba(25, 25, 25, 0.9);
+}
+
+.printable {
+  margin: 0 20px 10px 0;
+}
+
+.resView .positioningP {
+  position: relative;
+  height: 70vh;
+  top: 5vh;
+  overflow-y: scroll;
+  margin: auto;
+  width: 85vw;
+}
+
+  .resView .positioningP canvas {
+      width: 75vw !important;
+      height: auto !important;
+  }
+
+.resView .buttonsP {
+  width: 75%;
+  position: relative;
+  margin: auto;
+  text-align: right;
+  top: 5vh;
+  z-index: 1;
+}
+
+  .resView .buttonsP input {
+      font-size: 30px;
+      color: white;
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+  }
+
+  .resView .buttonsP #cancel {
+      margin: 1% 0 0 0;
+  }
+
+  .tableDiv{
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    border: 2px solid black;
+    width: 700px;
+    margin: auto;
+    padding: 2%;
+    position: relative;
+    top: -4%;
+  }
+
+  .tableDiv table{
+      width: 100%;
+  }
+
+  .tableDiv td.col-7 {
+    font-size: small;
+    white-space: pre;
+  }
+
+  .tableDiv td.col-2 {
+    font-weight: 600;
+    font-size: medium;
+  }
+
+  .tableDiv .col-3 {
+    text-align: right;
+  }
+
+  
+
+  .tableDiv th{
+    font-weight: 800;
+    font-size: initial;
+  }
+
+  .tableDiv th.col-2{
+      text-align: left;
+  }
+
+  .tableDiv th.col-7{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .tableDiv .row {
+    border-bottom: 1px dashed black;
+    }
+
+    .tableDiv thead {
+        border-bottom: solid !important;
+    }
+
+    .tableDiv .row:last-of-type{
+        border-bottom: solid;
+    }
+
+    #btnCancel{
+        border-bottom: none;
+    }
+/*# sourceMappingURL=style.css.map */

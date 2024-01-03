@@ -1,0 +1,27 @@
+{
+  "Minimaal pakket": {
+    "beschrijving": "Laag frequentie begeleiding",
+    "detail": "1 begeleiding per 2 maanden (5 per jaar)",
+    "punten": 0.876953
+  },
+  "Basis pakket": {
+    "beschrijving": "Basis begeleiding",
+    "detail": "1 begeleiding per maand (10 per jaar)",
+    "punten": 1.754681
+  },
+  "Medium pakket": {
+    "beschrijving": "Midden frequentie begeleiding",
+    "detail": "1 begeleiding per 3 weken (15 per jaar)",
+    "punten": 2.631634
+  },
+  "Opstart pakket": {
+    "beschrijving": "Opstart begeleiding",
+    "detail": "1 begeleiding per 2 weken (20 per jaar)",
+    "punten": 3.508587
+  },
+  "Maximaal pakket": {
+    "beschrijving": "Hoog frequentie begeleiding",
+    "detail": "1 begeleiding per 2 weken (20 per jaar)",
+    "punten": 3.508587
+  }
+}

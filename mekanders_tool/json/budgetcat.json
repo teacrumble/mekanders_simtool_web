@@ -1,0 +1,122 @@
+[
+    {
+        "budget": 1,
+        "vereisteBP": ["B1/P0", "B1/P1", "B1/P2"],
+        "ZorggebondenP": 7.750000        
+    },
+    {
+        "budget": 2,
+        "vereisteBP": ["B2/P0","B2/P1","B2/P2","B1/P3"],
+        "ZorggebondenP": 10.260000       
+    },
+    {
+        "budget": 3,
+        "vereisteBP": ["B3/P0","B3/P1","B3/P2","B2/P3"],
+        "ZorggebondenP": 15.290000       
+    },
+    {
+        "budget": 4,
+        "vereisteBP": ["B4/P0"],
+        "ZorggebondenP": 21.260000        
+    },
+    {
+        "budget": 5,
+        "vereisteBP": ["B4/P0", "B1/P5", "B1/P4", "B5/P0"],
+        "ZorggebondenP": 27.220000        
+    },
+    {
+        "budget": 6,
+        "vereisteBP": ["B4/P1","B4/P2","B3/P3","B2/P4","B2/P5","B5/P1","B6/P1"],
+        "ZorggebondenP": 31.010000        
+    },
+    {
+        "budget": 7,
+        "vereisteBP": ["B5/P2"],
+        "ZorggebondenP": 34.810000        
+    },
+    {
+        "budget": 8,
+        "vereisteBP": ["B6/P2","B4/P3","B3/P4", "B1/P6", "B1/P7"],
+        "ZorggebondenP": 39.380000        
+    },
+    {
+        "budget": 9,
+        "vereisteBP": ["B3/P5", "B5/P3", "B7/P1", "B2/P6", "B2/P7"],
+        "ZorggebondenP": 43.900000       
+    },
+    {
+        "budget": 10,
+        "vereisteBP": ["B6/P3" ,"B4/P4" ,"B7/P2"],
+        "ZorggebondenP": 47.370000        
+    },
+    {
+        "budget": 11,
+        "vereisteBP": ["B3/P6", "B4/P5"],
+        "ZorggebondenP": 50.840000        
+    },
+    {
+        "budget": 12,
+        "vereisteBP": ["B5/P4", "B8/P1"],
+        "ZorggebondenP": 54.170000        
+    },
+    {
+        "budget": 13,
+        "vereisteBP": ["B5/P5", "B8/P2", "B7/P3", "B6/P4"],
+        "ZorggebondenP": 57.510000        
+    },
+    {
+        "budget": 14,
+        "vereisteBP": ["B8/P3", "B6/P5", "B4/P6"],
+        "ZorggebondenP": 62.160000        
+    },
+    {
+        "budget": 15,
+        "vereisteBP": ["B7/P4", "B5/P6"],
+        "ZorggebondenP": 65.170000        
+    },
+    {
+        "budget": 16,
+        "vereisteBP": ["B7/P4", "B5/P6", "B3/P7"],
+        "ZorggebondenP": 68.180000        
+    },
+    {
+        "budget": 17,
+        "vereisteBP": ["B6/P6", "B7/P5"],
+        "ZorggebondenP": 71.190000        
+    },
+    {
+        "budget": 18,
+        "vereisteBP": ["B8/P4"],
+        "ZorggebondenP": 74.320000        
+    },
+    {
+        "budget": 19,
+        "vereisteBP": ["B4/P7"],
+        "ZorggebondenP": 77.450000        
+    },
+    {
+        "budget": 20,
+        "vereisteBP": ["B8/P5", "B7/P6", "B5/P7"],
+        "ZorggebondenP": 80.580000        
+    },
+    {
+        "budget": 21,
+        "vereisteBP": ["B6/P7"],
+        "ZorggebondenP": 86.520000        
+    },
+    {
+        "budget": 22,
+        "vereisteBP": ["B8/P6"],
+        "ZorggebondenP": 90.970000       
+    },
+    {
+        "budget": 23,
+        "vereisteBP": ["B7/P7"],
+        "ZorggebondenP": 97.127500       
+    },
+    {
+        "budget": 24,
+        "vereisteBP": ["B8/P7"],
+        "ZorggebondenP": 103.285000        
+    }
+]

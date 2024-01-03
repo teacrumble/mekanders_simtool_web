@@ -1,0 +1,314 @@
+<!-- 
+
+/**
+ * Copyright 2020 Dries Rascar
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
+to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Mekanders_Sim</title>
+    <link rel='shortcut icon' type='image/png' href='images/icon.ico' />
+
+    <!-- BOOTSTRAP -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="./bootstrap/jquery.js"></script>
+    <script src="./bootstrap/popper.js"></script>
+    <script src="./bootstrap/bootstrap.js"></script>
+    <script src="./bootstrap/html2canvas.js"></script>
+    <link rel="stylesheet" href="./bootstrap/bootstrap_min.css">
+
+    <!-- STYLE -->
+    <link href="page_css/default.css" rel="stylesheet" />
+
+    <!-- JS -->
+    <script src="page_js/jspdf.js"></script>
+    <script type="application/ecmascript" src="page_js/Datamodels.js"></script>
+    <script type="application/ecmascript" src="page_js/JsonReader.js"></script>
+    <script type="application/ecmascript" src="page_js/Processor.js"></script>
+    <script type="application/ecmascript" src="page_js/RowCalculator.js"></script>
+    <script type="application/ecmascript" src="page_js/TabManager.js"></script>
+    <script type="application/ecmascript" src="page_js/CostBehaviour.js"></script>
+    <script type="application/ecmascript" src="page_js/TableLoader.js"></script>
+    <script type="application/ecmascript" src="page_js/FilesHandler.js"></script>
+    <script type="application/ecmascript" src="page_js/MasterBehaviour.js"></script>
+
+    <!-- MAIN -->
+    <script type="application/ecmascript" src="page_js/main.js"></script>
+</head>
+<body class="win-type-body" onload="mainStart()">
+    <div class="container">
+        <div class="mainInfo">
+            <div class="row">
+                <div class="col" id="name">
+                    <label for="txtName">Naam</label>
+                    <input id="txtName" type="text" tabindex="1">
+                </div>
+                <div class="col" id="BP">
+                    <div id="bpCont">
+                        <div id="budgetCats">
+                            <span>?</span>
+                        </div>
+                        <label for="bValue">B</label>
+                        <input id="bValue" placeholder="0" type="text" tabindex="4">
+                        <label for="pValue">/ P</label>
+                        <input id="pValue" placeholder="0" type="text" tabindex="5">
+                    </div>
+                    <img src="images/logo_transparant.png" alt="logo">
+                </div>
+                <div id="extra_options">
+                    <div class="switch">
+                        <input id="rNew" value=true name="BP_version" type="radio" checked>
+                        <label for="rNew">Nieuw</label>
+                        <input id="rTrans" value=false name="BP_version" type="radio">
+                        <label for="rTrans">Transitie</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="txtBudget">Persoonsvolgend Budget</label>
+                    <div id="txtBudget">
+                        <div class="symbP">
+                            <input id="budgetP" type="text" tabindex="2">
+                        </div>
+                        <span>&#8644;</span>
+                        <div class="symbE">
+                            <input id="budgetE" type="text" tabindex="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="periode">Periode</label>
+                    <div id="periode">
+                        <input id="startDt" type="date" tabindex="7">
+                        <span> - </span>
+                        <input id="endDt" type="date" tabindex="8">
+                    </div>
+                    <span id="totaalDagen"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container costs">
+
+        <div id="veil" class="row">
+            Vul bovenstaande velden in!
+        </div>
+
+        <div id="tabs" class="row">
+            <div id="form">
+                <div index=0 class="tab bgred selected"><span>1</span></div>
+                <div index=1 class="tab bgblue"><span>2</span></div>
+                <div index=2 class="tab bggreen"><span>3</span></div>
+                <div index=3 class="tab bgyellow"><span>4</span></div>
+            </div>
+            <div id="others">
+                <div index=4 class="tab"><span></span><span class="symbol">&#128214;</span></div>
+                <div id="download" class="tab"><span></span><span class="symbol">&#128190;</span></div>
+            </div>
+        </div>
+
+        <div id="overviews" hidden>
+            <div id="switchContainer">
+                <div id="radioTable" class="switch">
+                    <input id="rDag" value="dag" name="tabelR" type="radio" checked>
+                    <label for="rDag">Dagbegeleiding</label>
+                    <input id="rWoon" value="woon" name="tabelR" type="radio">
+                    <label for="rWoon">Woonbegeleiding</label>
+                    <input id="rIndiv" value="indiv" name="tabelR" type="radio">
+                    <label for="rIndiv">Individuele Begeleiding</label>
+                    <input id="rPak" value="Begeleid werk" name="tabelR" type="radio">
+                    <label for="rPak">Begeleid werk</label>
+                    <input id="rBw" value="Bwaarden" name="tabelR" type="radio">
+                    <label for="rBw">B-waarden</label>
+                    <input id="rPw" value="Pwaarden" name="tabelR" type="radio">
+                    <label for="rPw">P-waarden</label>
+                </div>
+            </div>
+            <table class="container"></table>
+        </div>
+
+        <div id="prices" class="bgred">
+            <div id="VAPH">
+                <div class="symbP">
+                    <input id="VAPH_Budget" type="text" placeholder="VAPH">
+                    <input type="hidden" id="VAPH_Ratio" value="1">
+                </div>
+                <div id="budgetLock" class="switch">
+                    <input id="VAPH_Lock" type="checkbox">
+                    <label for="VAPH_Lock">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16">
+                                <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z"/>
+                              </svg> 
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div id="switchTotal">
+                <div class="switch">
+                    <input id="rP" value="P" name="resR" type="radio">
+                    <label for="rP">Ptn</label>
+                    <input id="rE" value="E" name="resR" type="radio">
+                    <label for="rE">&euro;</label>
+                </div>
+            </div>
+            <div id="ondersteuningen">
+                <div id="woonRow" class="row">
+                    <div class="col beschrijving">Woonondersteuning</div>
+                    <div class="col wekelijks row">
+                        <div id="woon" class="col-3">
+                            <input eenheid="nachten" type="text">
+                            <label></label>
+                        </div>
+                        <div class="col-9">Nachten per week</div>
+                    </div>
+                    <div class="col minmax row">
+                        <div class="col-3">
+                            <input class="total" type="text" tabindex="999">
+                        </div>
+                        <div class="col-9"></div>
+                    </div>
+                    <div class="col totaal"></div>
+                </div>
+
+                <div id="dagOndersteuning">
+                    <div id="dagRow" class="row">
+                        <div class="col beschrijving">Dagondersteuning</div>
+                        <div class="col wekelijks row">
+                            <div id="dag" class="col-3">
+                                <input eenheid="dagen" type="text">
+                                <label></label>
+                            </div>
+                            <div class="col-9">Dagen per week</div>
+                        </div>
+                        <div class="col minmax row">
+                            <div class="col-3">
+                                <input class="total" type="text" tabindex="999">
+                            </div>
+                            <div class="col-9"></div>
+                        </div>
+                        <div class="col totaal"></div>
+                    </div>
+
+                    <div class="row" id="activiteiten">
+                        <div class="col-1"></div>
+                        <div class="col-5 beschrijving">
+                            <p>Deelname activiteiten en/of 
+                                bezoek ontmoetingsruimte:</p>
+                        </div>
+                        <div class="col-1">
+                            <label class="actBox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="col-3 info"></div>
+                        <div class="col totaal"></div>
+                    </div>
+
+                    <div class="row" id="dag_inc_activiteiten">
+                        <div class="col-5 beschrijving">
+                            Dagondersteuning inclusief activiteiten: 
+                        </div>
+                        <div class="col-5 info">
+                            
+                        </div>
+                        <div class="col tussen"></div>
+                    </div>
+                </div>
+
+                <div id="psychoRow" class="row">
+                    <div class="col beschrijving">Individuele Ondersteuning</div>
+                    <div class="col wekelijks row">
+                        <div id="psycho" class="col-3">
+                            <input eenheid="uren" type="text">
+                            <label></label>
+                        </div>
+                        <div class="col-9">Uren per week</div>
+                    </div>
+                    <div class="col minmax row">
+                        <div class="col-3">
+                            <input class="total" type="text" tabindex="999">
+                        </div>
+                        <div class="col-9"></div>
+                    </div>
+                    <div class="col totaal"></div>
+                </div>
+
+                <div id="pakketten" class="row">
+                    <div class="col beschrijving">Begeleid werk</div>
+                    <div class="col wekelijks row">
+                        <div id="pakket" class="col-3">
+                            <input eenheid="uren" type="text">
+                            <label></label>
+                        </div>
+                        <div class="col-9">Uren per week</div>
+                    </div>
+                    <div class="col minmax row">
+                        <div class="col-3">
+                            <input class="total" type="text" tabindex="999">
+                        </div>
+                        <div class="col-9"></div>
+                    </div>
+                    <div class="col totaal"></div>
+                </div>
+            </div>
+
+
+            <div id="andere">
+                <div class="row" id="besteedbaarDeel">
+                    <div class="col beschrijving">Vrij besteedbaar deel <span>(per jaar)</span></div>
+                    <div>
+                        <div class="col besteedbaar symbE"><input id="besteedbaar" type="text"></div>
+                        <label></label>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col totaal"></div>
+                </div>
+            </div>
+
+
+            <div id="resultaat">
+                <div class="row beschrijving">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"><span>Totaal kosten:</span></div>
+                    <div class="col res" id="res">
+                    </div>
+                </div>
+                <div class="row beschrijving" id="resBudgetRow">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"><span>Budget:</span></div>
+                    <div class="col res"></div>
+                </div>
+                <div class="row beschrijving" id="resCostRow" hidden>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"><span>Resultaat:</span></div>
+                    <div class="col res"></div>
+                </div>
+            </div>
+            <div id="line"></div>
+        </div>
+    </div>
+</body>
+</html>

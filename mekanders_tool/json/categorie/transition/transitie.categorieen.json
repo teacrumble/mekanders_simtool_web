@@ -1,0 +1,146 @@
+[
+    {
+        "cat_ids": ["B3/P0", "B3/P1", "B3/P2", "B6/P1", "B8/P1", "B2/P3"],
+        "cat_info":{
+            "dag_basis": 1.306021,
+            "dag_inc": 0.839585,
+            "woon_basis": 1.751979,
+            "woon_inc": 1.126272
+        }
+    },
+    {
+        "cat_ids": ["B4/P0"],
+        "cat_info":{
+            "dag_basis": 2.325042,
+            "dag_inc": 1.494669,
+            "woon_basis": 3.118958,
+            "woon_inc": 2.005045
+        }
+    },
+    {
+        "cat_ids": ["B4/P1","B4/P2","B6/P2","B3/P3","B2/P4","B2/P5","B2/P6","B2/P7"],
+        "cat_info":{
+            "dag_basis": 2.684771,
+            "dag_inc": 1.702781,
+            "woon_basis": 3.553229,
+            "woon_inc": 2.284219
+        }
+    },
+    {
+        "cat_ids": ["B5/P2", "B4/P3", "B3/P4"],
+        "cat_info":{
+            "dag_basis": 3.363708,
+            "dag_inc": 2.162384,
+            "woon_basis": 4.512292,
+            "woon_inc": 2.900759
+        }
+    },
+    {
+        "cat_ids": ["B3/P5"],
+        "cat_info":{
+            "dag_basis": 3.749792,
+            "dag_inc": 2.41058,
+            "woon_basis": 5.030208,
+            "woon_inc": 3.233834
+        }
+    },
+    {
+        "cat_ids": ["B5/P3", "B4/P4", "B3/P7"],
+        "cat_info":{
+            "dag_basis": 4.046188,
+            "dag_inc": 2.60112,
+            "woon_basis": 5.427813,
+            "woon_inc": 3.489308
+        }
+    },
+    {
+        "cat_ids": ["B3/P6"],
+        "cat_info":{
+            "dag_basis": 4.342583,
+            "dag_inc": 2.791661,
+            "woon_basis": 5.825417,
+            "woon_inc": 3.74491
+        }
+    },
+    {
+        "cat_ids": ["B4/P5"],
+        "cat_info":{
+            "dag_basis": 4.627021,
+            "dag_inc": 2.974513,
+            "woon_basis": 6.206979,
+            "woon_inc": 3.990201
+        }
+    },
+    {
+        "cat_ids": ["B4/P6","B5/P4", "B5/P5", "B6/P3"],
+        "cat_info":{
+            "dag_basis": 5.3095,
+            "dag_inc": 3.41325,
+            "woon_basis": 7.1225,
+            "woon_inc": 4.57875
+        }
+    },
+    {
+        "cat_ids": ["B5/P6"],
+        "cat_info":{
+            "dag_basis": 6.080813,
+            "dag_inc": 3.909093,
+            "woon_basis": 8.157188,
+            "woon_inc": 5.243906
+        }
+    },
+    {
+        "cat_ids": ["B6/P4"],
+        "cat_info":{
+            "dag_basis": 6.348167,
+            "dag_inc": 4.080964,
+            "woon_basis": 8.515833,
+            "woon_inc": 5.474465
+        }
+    },
+    {
+        "cat_ids": ["B4/P7"],
+        "cat_info":{
+            "dag_basis": 6.615521,
+            "dag_inc": 4.252835,
+            "woon_basis": 8.874479,
+            "woon_inc": 5.705022
+        }
+    },
+    {
+        "cat_ids": ["B6/P5"],
+        "cat_info":{
+            "dag_basis": 6.882875,
+            "dag_inc": 4.424705,
+            "woon_basis": 9.233125,
+            "woon_inc": 5.93558
+        }
+    },
+    {
+        "cat_ids": ["B5/P7"],
+        "cat_info":{
+            "dag_basis": 7.390250,
+            "dag_inc": 4.750875,
+            "woon_basis": 9.913750,
+            "woon_inc": 6.373125
+        }
+    },
+    {
+        "cat_ids": ["B6/P6"],
+        "cat_info":{
+            "dag_basis": 7.770354,
+            "dag_inc": 4.995228,
+            "woon_basis": 10.423646,
+            "woon_inc": 6.700915
+        }
+    },
+    {
+        "cat_ids": ["B6/P7"],
+        "cat_info":{
+            "dag_basis": 8.82226,
+            "dag_inc": 5.671454,
+            "woon_basis": 11.83474,
+            "woon_inc": 7.608046
+        }
+    }
+    ]
